@@ -2,22 +2,22 @@
 
 >>>Backend : </br>
 
-1. install composer,laravel 8.31.0, php 7.3 64 Bit</br>
-2. git clone https://github.com/dennis2908/dennisalamsuteralaravel </br>
-3. buka cmd dan lalu ketik composer install </br>
-4. Hapus file .env <br>
-5. rename file .env.mysql ke .env<br>
-6. buka file .env dan edit DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, </br>
+- install composer,laravel 8.31.0, php 7.3 64 Bit</br>
+- git clone https://github.com/dennis2908/dennisalamsuteralaravel </br>
+- buka cmd dan lalu ketik composer install </br>
+- Hapus file .env <br>
+- rename file .env.mysql ke .env<br>
+- buka file .env dan edit DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, </br>
    DB_PASSWORD ke settingan mysql local / cloud<br>
-7. buka cmd dan lalu ketik php artisan optimize</br>
-8. php artisan key:generate </br>
-9. php artisan optimize:clear</br>
-10.php artisan optimize</br>
-11.php artisan jwt:secret</br>
-12.php artisan optimize</br>
-13.php artisan optimize:clear</br>
-14.php artisan migrate --seed</br>
-13.php artisan serve --port=8441</br>
+- tutup file .env dan buka cmd dan lalu ketik php artisan optimize</br>
+- php artisan key:generate </br>
+- php artisan optimize:clear</br>
+- php artisan optimize</br>
+- php artisan jwt:secret</br>
+- php artisan optimize</br>
+- php artisan optimize:clear</br>
+- php artisan migrate --seed</br>
+- php artisan serve --port=8441</br>
 
 	
 # Bukti running : (project frontend + backend ini yg sudah di deploy online)
