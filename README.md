@@ -24,6 +24,10 @@
 
   https://alamsuteradennis.herokuapp.com
   
+# Waktu Pengerjaan Backend + Frontend Termasuk deploy online
+
+  4 hari
+  
 # Notes :
 
   - Login : </br>
@@ -81,4 +85,4 @@
 	
 	Untuk role superadmin : semua menu unlock <br>
 	
-	Untuk role admin : menu barang, customer, order <br>
+	Untuk role admin : menu barang, order <br>
