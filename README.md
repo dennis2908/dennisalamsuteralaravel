@@ -1,6 +1,6 @@
 # Instalasi dan running project di localhost:
 
->>>Backend : </br>
+# Backend : </br>
 
 - install composer,laravel 8.31.0, php 7.3 64 Bit</br>
 - git clone https://github.com/dennis2908/dennisalamsuteralaravel </br>
@@ -86,3 +86,6 @@
 	Untuk role superadmin : semua menu unlock <br>
 	
 	Untuk role admin : menu barang, order <br>
+	
+	
+# Front End : https://github.com/dennis2908/dennisalamsuteranext </br>	
