@@ -58,5 +58,46 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ]);
+		
+		DB::table('mbarangs')->insert([
+            [
+                'name' => 'Mouse XX',
+				'code' => 'B001',
+				'qty' => 2000,
+				'price' => 200000,
+				'desc' => 'Good Item',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+			[
+                'name' => 'Headset XX',
+				'code' => 'B002',
+				'qty' => 2000,
+				'price' => 100000,
+				'desc' => 'Good Item',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+		
+		
+		DB::table('mcustomers')->insert([
+            [
+                'name' => 'PT Bintang 5',
+				'code' => 'C001',
+				'phone' => "0819129292",
+				'address' => "Jl Bintang Lima 9 Jakarta",
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+			[
+                'name' => 'PT Maju Mundur',
+				'code' => 'C002',
+				'phone' => '08191292928',
+				'address' => "Jl Tomat 8 Jakarta",
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
     }
 }

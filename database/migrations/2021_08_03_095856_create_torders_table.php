@@ -15,7 +15,7 @@ class CreateTordersTable extends Migration
     {
         Schema::create('torders', function (Blueprint $table) {
             $table->id();
-			$table->string('customer_id');
+			$table->integer('customer_id');
 			$table->string('arr_brg');
             $table->string('arr_price');
             $table->string('arr_qty');

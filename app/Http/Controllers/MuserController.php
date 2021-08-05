@@ -78,7 +78,8 @@ class MuserController extends Controller
             'address' => 'required|min:3',
             'password' => 'required|min:3',
             'phone' => 'required|min:3',
-            'email'=>'required|min:3|email'
+            'email'=>'required|min:3|email',
+            'm_role'=>'required'
       ]);
       
       
@@ -139,7 +140,8 @@ class MuserController extends Controller
             'address' => 'required|min:3',
             'password' => 'required|min:3',
             'phone' => 'required|min:3',
-            'email'=>'required|min:3|email'
+            'email'=>'required|min:3|email',
+            'm_role'=>'required'
       ]);
       
       
@@ -155,7 +157,7 @@ class MuserController extends Controller
           $muser->phone  = $request->phone;
           $muser->save();
 
-          return response()->json(['success'=>'Added new record.']);
+          return response()->json(['success'=>'Update existing record.']);
 
       }
 
