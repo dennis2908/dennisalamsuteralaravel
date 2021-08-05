@@ -32,7 +32,9 @@
 	
 	Passsword : dana88 </br>
 	
-	Role : Super Admin </br></br></br>
+	Role : Super Admin </br>
+	
+	================== </br>
 	
 	Username : dina88 </br>
 	
@@ -53,4 +55,4 @@
   
     password = "", port = "3306", database name = "alamsutera", host = "" </br>
 	
-  - Library dipake : JWT Token Tymon </br>
+  - Library dipake : JWT Token Tymon </br>	
