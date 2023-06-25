@@ -18,15 +18,6 @@
 - php artisan optimize:clear</br>
 - php artisan migrate --seed</br>
 - php artisan serve --port=8441</br>
-
-	
-# Bukti running : (project frontend + backend ini yg sudah di deploy online)
-
-  https://alamsuteradennis.herokuapp.com
-  
-# Waktu Pengerjaan Backend + Frontend Termasuk deploy online : </br>
-
-  4 hari
   
 # Notes :
 
