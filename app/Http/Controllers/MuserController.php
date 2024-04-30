@@ -11,34 +11,12 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class MuserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $data = Muser::select(['musers.id','musers.name','musers.address','musers.created_at','musers.m_role','musers.phone','musers.username','musers.email','role_name'])->join('mroles','mroles.id','=','musers.m_role')->latest()->get();
 		
 		return response()->json(['result'=>$data]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
 
     public function doLogin(Request $request)
     {
@@ -102,35 +80,6 @@ class MuserController extends Controller
       return response()->json(['error'=>$validator->errors()->all()]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Muser  $muser
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Muser $muser)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Muser  $muser
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Muser $muser)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Muser  $muser
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -164,12 +113,6 @@ class MuserController extends Controller
       return response()->json(['error'=>$validator->errors()->all()]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Muser  $muser
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         if(Muser::destroy($id))

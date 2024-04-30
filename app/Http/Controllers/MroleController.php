@@ -59,35 +59,6 @@ class MroleController extends Controller
         return response()->json(['error'=>$validator->errors()->all()]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Mrole  $mrole
-     * @return \Illuminate\Http\Response
-     */
-    public function show(mrole $mrole)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mrole  $mrole
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(mrole $mrole)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\mrole  $mrole
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -134,12 +105,6 @@ class MroleController extends Controller
         return response()->json(['error'=>$validator->errors()->all()]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Mrole  $mrole
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         if(Mrole::destroy($id))

@@ -8,11 +8,7 @@ use Validator;
 
 class McustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = Mcustomer::latest()->get();
@@ -20,22 +16,6 @@ class McustomerController extends Controller
 		return response()->json(['result'=>$data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -61,35 +41,6 @@ class McustomerController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Mcustomer  $mcustomer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Mcustomer $mcustomer)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mcustomer  $mcustomer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Mcustomer $mcustomer)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mcustomer  $mcustomer
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
          $validator = Validator::make($request->all(), [
@@ -114,13 +65,7 @@ class McustomerController extends Controller
 
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Mcustomer  $mcustomer
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         if(Mcustomer::destroy($id))
