@@ -15,13 +15,12 @@ class CreateMusersTable extends Migration
     {
         Schema::create('musers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('address');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('no_telp');
+            $table->string('no_sim');
             $table->string('password');
-            $table->integer('m_role');
+            $table->integer('m_role')->default(1);
             $table->timestamps();
         });
     }

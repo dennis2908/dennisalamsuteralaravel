@@ -8,11 +8,6 @@ use Validator;
 
 class MroleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $data = Mrole::latest()->get();
@@ -20,22 +15,13 @@ class MroleController extends Controller
 		return response()->json(['result'=>$data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function dataList()
     {
-        //
+        $data = Mrole::latest()->get();
+		
+		return response()->json(['result'=>$data]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -104,6 +90,7 @@ class MroleController extends Controller
 
         return response()->json(['error'=>$validator->errors()->all()]);
     }
+
 
     public function destroy($id)
     {

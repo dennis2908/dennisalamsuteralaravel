@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMcustomersTable extends Migration
+class CreateMinjamMobilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateMcustomersTable extends Migration
      */
     public function up()
     {
-        Schema::create('mcustomers', function (Blueprint $table) {
+        Schema::create('minjam_mobils', function (Blueprint $table) {
             $table->id();
-			$table->string('name')->unique();
-			$table->string('code')->unique();
-            $table->string('phone');
-            $table->string('address');
+            $table->date('tgl_mulai');
+            $table->date('tgl_akhir');
+            $table->integer('m_mobil');
+            $table->integer('m_user');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateMcustomersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mcustomers');
+        Schema::dropIfExists('minjam_mobils');
     }
 }

@@ -16,30 +16,50 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MroleController;
 
-use App\Http\Controllers\MbarangController;
-
-use App\Http\Controllers\McustomerController;
-
 use App\Http\Controllers\MuserController;
 
-use App\Http\Controllers\TorderController;
+use App\Http\Controllers\HobbyController;
+
+use App\Http\Controllers\ManajemenMobilController;
+
+use App\Http\Controllers\MinjamMobilController;
+
+use App\Http\Controllers\KembaliMobilController;
+
+Route::middleware(['cors'])->group(function () {
+
+    Route::post('user/login', [MuserController::class, 'doLogin']);
+    Route::post('user/register', [MuserController::class, 'store']);
+
+    Route::get('user/cek_sim/{id}', [MuserController::class, 'cek_sim']);
+
+    Route::group(['middleware' => ['jwt.verify']], function() {
 
 
+        Route::resource('role', MroleController::class);
+    
+        Route::resource('manajemen', ManajemenMobilController::class);
 
-Route::group(['middleware' => ['jwt.verify']], function() {
+        Route::resource('minjam', MinjamMobilController::class);
 
-Route::resource('role', MroleController::class);
+        Route::resource('kembali', KembaliMobilController::class);
 
-Route::resource('user', MuserController::class);
+        Route::get('manajemen/cekplat/{id}', [ManajemenMobilController::class, 'cekplat']);
 
-Route::resource('barang', MbarangController::class);
+        Route::post('manajemen/cariMobil', [ManajemenMobilController::class, 'cariMobil']);
 
-Route::resource('customer', McustomerController::class);
+        Route::post('minjam/cariMobil', [MinjamMobilController::class, 'cariMobil']);
+        
+        Route::post('kembali/cariMobil', [KembaliMobilController::class, 'cariMobil']);
 
-Route::resource('order', TorderController::class);
-
-Route::put('role/assign/{id}', [MroleController::class, 'updateAssign']);
-
+        Route::post('minjam/cekavail', [MinjamMobilController::class, 'cekavail']);
+    
+        Route::put('role/assign/{id}', [MroleController::class, 'updateAssign']);
+    
+    });
+    
 });
 
-Route::post('user/login', [MuserController::class, 'doLogin']);
+
+
+

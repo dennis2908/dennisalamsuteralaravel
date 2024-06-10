@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMbarangsTable extends Migration
+class CreateKembaliMobilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateMbarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mbarangs', function (Blueprint $table) {
+        Schema::create('kembali_mobils', function (Blueprint $table) {
             $table->id();
-			$table->string('name')->unique();
-			$table->string('code')->unique();
-            $table->string('qty');
-            $table->string('price');
-			$table->string('desc')->nullable();
+            $table->integer('mpinjam');
+            $table->date('tgl_kembali_pinjam');
+            $table->integer('biaya_sewa');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateMbarangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mbarangs');
+        Schema::dropIfExists('kembali_mobils');
     }
 }
